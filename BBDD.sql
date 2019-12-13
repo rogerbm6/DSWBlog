@@ -41,4 +41,30 @@ CREATE TABLE `post` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 
+-- Adminer 4.7.3 MySQL dump
+
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
+
+INSERT INTO `autor` (`id`, `nombre`, `email`, `contraseña`, `foto`) VALUES
+(1,	'anonimo',	NULL,	'12345',	'nada.jpg'),
+(3,	'roger',	'roggerbm6@gmail.com',	'12345',	'roger.jpg');
+
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE `categoria` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO `categoria` (`id`, `nombre`) VALUES
+(1,	'random'),
+(2,	'memes'),
+(3,	'critica'),
+(4,	'reportaje');
+
+-- 2019-12-13 01:51:32
+
 -- 2019-12-13 01:47:50
