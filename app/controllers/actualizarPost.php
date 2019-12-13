@@ -33,6 +33,12 @@ try {
     $tiposAceptados = ["image/jpeg", "image/png", "image/gif"];
 
     if ($_FILES['imagen']['name']) {
+
+      //borrar imagen de servidor
+      $imagenBorrar = $postRepository->find($postActual->getId());
+
+      unlink(Post::RUTA_IMAGES_POSTS.$imagenBorrar->getImagen());
+      //crea nueva imagen
       $imagen = new File("imagen", $tiposAceptados);
       $imagen->saveUploadFile(Post::RUTA_IMAGES_POSTS);
       $postRepository->updatePost($titulo,$contenido,$categoria,$imagen->getFileName(),$postActual->getId());
